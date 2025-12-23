@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap будет добавлен после деплоя
+# Sitemap: https://AlDtoll.github.io/lesscarebot-landing/sitemap.xml
