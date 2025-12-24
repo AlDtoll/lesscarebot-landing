@@ -1,0 +1,519 @@
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #ec4899;
+    --accent-color: #f59e0b;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 120px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    background: #f3f4f6;
+}
+
+.btn-secondary {
+    background: var(--gradient-secondary);
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+.features {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2) .feature-icon {
+    animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(3) .feature-icon {
+    animation-delay: 1s;
+}
+
+.feature-card:nth-child(4) .feature-icon {
+    animation-delay: 1.5s;
+}
+
+.feature-card:nth-child(5) .feature-icon {
+    animation-delay: 2s;
+}
+
+.feature-card:nth-child(6) .feature-icon {
+    animation-delay: 2.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ============================================
+   How It Works Section
+   ============================================ */
+.how-it-works {
+    padding: 100px 0;
+    background: white;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 auto 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.step p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ============================================
+   Benefits Section
+   ============================================ */
+.benefits {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.benefits h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+}
+
+.benefits-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-check {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.benefit-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.benefit-item p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ============================================
+   FAQ Section
+   ============================================ */
+.faq {
+    padding: 100px 0;
+    background: white;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+.faq-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.faq-item p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.faq-item code {
+    background: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   Channel Section
+   ============================================ */
+.channel {
+    padding: 100px 0;
+    background: var(--gradient-secondary);
+    color: white;
+    text-align: center;
+}
+
+.channel h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.channel p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .features h2,
+    .how-it-works h2,
+    .benefits h2,
+    .faq h2,
+    .channel h2 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+    
+    .hero {
+        padding: 80px 0 60px;
+    }
+    
+    .features,
+    .how-it-works,
+    .benefits,
+    .faq,
+    .channel {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .feature-card,
+    .benefit-item,
+    .faq-item {
+        padding: 25px 20px;
+    }
+}
+
